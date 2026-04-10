@@ -20,11 +20,13 @@ It is **intentionally different** from the site’s long-form pages—for exampl
 psdg/
 ├── README.md
 ├── LICENSE
+├── RULES.md            # canonical rules v1.13 (Markdown); site mirrors with HTML nav
 ├── solvers/python/     # solver.py, oracle.py, helpers, small blunder JSON fixtures
 └── benchmark/          # *.json suites, Python scripts, output/ logs
 ```
 
-See [benchmark/README.md](benchmark/README.md) for script roles and quick commands.
+- **Rules:** [RULES.md](RULES.md) — same v1.13 text as [psdg.pages.dev/rules](https://psdg.pages.dev/rules.html).
+- **Benchmarks:** [benchmark/README.md](benchmark/README.md) for script roles and quick commands.
 
 ---
 
