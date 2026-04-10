@@ -1,0 +1,1787 @@
+{
+  "version": 1,
+  "rules": "v1.11",
+  "crystals": {
+    "a": [
+      4,
+      6
+    ],
+    "b": [
+      2,
+      5
+    ]
+  },
+  "generated": "2026-02-15T18:22:09Z",
+  "entries": [
+    {
+      "id": 0,
+      "seed": 0,
+      "dice": 4,
+      "board": [
+        1,
+        0,
+        1,
+        2,
+        0,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 1,
+      "seed": 1,
+      "dice": 4,
+      "board": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 2,
+      "seed": 2,
+      "dice": 4,
+      "board": [
+        3,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 3,
+      "seed": 3,
+      "dice": 4,
+      "board": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 4,
+      "seed": 4,
+      "dice": 4,
+      "board": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 5,
+      "seed": 5,
+      "dice": 4,
+      "board": [
+        0,
+        0,
+        2,
+        0,
+        1,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 6,
+      "seed": 6,
+      "dice": 4,
+      "board": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 7,
+      "seed": 7,
+      "dice": 4,
+      "board": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 8,
+      "seed": 8,
+      "dice": 4,
+      "board": [
+        0,
+        2,
+        1,
+        1,
+        0,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 9,
+      "seed": 9,
+      "dice": 4,
+      "board": [
+        0,
+        0,
+        2,
+        1,
+        1,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 10,
+      "seed": 10,
+      "dice": 4,
+      "board": [
+        1,
+        0,
+        0,
+        2,
+        1,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 11,
+      "seed": 11,
+      "dice": 4,
+      "board": [
+        0,
+        0,
+        0,
+        3,
+        1,
+        0
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 12,
+      "seed": 12,
+      "dice": 4,
+      "board": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 13,
+      "seed": 13,
+      "dice": 4,
+      "board": [
+        0,
+        0,
+        2,
+        0,
+        0,
+        2
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 14,
+      "seed": 14,
+      "dice": 4,
+      "board": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        2
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 15,
+      "seed": 15,
+      "dice": 4,
+      "board": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 16,
+      "seed": 16,
+      "dice": 4,
+      "board": [
+        0,
+        0,
+        2,
+        2,
+        0,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 17,
+      "seed": 17,
+      "dice": 4,
+      "board": [
+        0,
+        0,
+        2,
+        1,
+        1,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 18,
+      "seed": 18,
+      "dice": 4,
+      "board": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 19,
+      "seed": 19,
+      "dice": 4,
+      "board": [
+        2,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 20,
+      "seed": 20,
+      "dice": 4,
+      "board": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        2
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 21,
+      "seed": 21,
+      "dice": 4,
+      "board": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 22,
+      "seed": 22,
+      "dice": 4,
+      "board": [
+        1,
+        2,
+        0,
+        0,
+        1,
+        0
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 23,
+      "seed": 23,
+      "dice": 4,
+      "board": [
+        2,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 24,
+      "seed": 24,
+      "dice": 4,
+      "board": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 25,
+      "seed": 25,
+      "dice": 4,
+      "board": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 26,
+      "seed": 26,
+      "dice": 4,
+      "board": [
+        0,
+        2,
+        0,
+        0,
+        0,
+        2
+      ],
+      "value": -1,
+      "source": "random"
+    },
+    {
+      "id": 27,
+      "seed": 27,
+      "dice": 4,
+      "board": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        2
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 28,
+      "seed": 28,
+      "dice": 4,
+      "board": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 29,
+      "seed": 29,
+      "dice": 4,
+      "board": [
+        1,
+        0,
+        1,
+        0,
+        2,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 30,
+      "seed": 30,
+      "dice": 4,
+      "board": [
+        1,
+        0,
+        1,
+        0,
+        2,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 31,
+      "seed": 31,
+      "dice": 4,
+      "board": [
+        2,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "value": -1,
+      "source": "random"
+    },
+    {
+      "id": 32,
+      "seed": 32,
+      "dice": 4,
+      "board": [
+        1,
+        2,
+        1,
+        0,
+        0,
+        0
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 33,
+      "seed": 33,
+      "dice": 4,
+      "board": [
+        0,
+        2,
+        0,
+        0,
+        1,
+        1
+      ],
+      "value": -1,
+      "source": "random"
+    },
+    {
+      "id": 34,
+      "seed": 34,
+      "dice": 4,
+      "board": [
+        1,
+        0,
+        1,
+        0,
+        2,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 35,
+      "seed": 35,
+      "dice": 4,
+      "board": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 36,
+      "seed": 36,
+      "dice": 4,
+      "board": [
+        2,
+        0,
+        2,
+        0,
+        0,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 37,
+      "seed": 37,
+      "dice": 4,
+      "board": [
+        1,
+        0,
+        0,
+        0,
+        2,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 38,
+      "seed": 38,
+      "dice": 4,
+      "board": [
+        0,
+        0,
+        0,
+        2,
+        0,
+        2
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 39,
+      "seed": 39,
+      "dice": 4,
+      "board": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 40,
+      "seed": 40,
+      "dice": 4,
+      "board": [
+        1,
+        0,
+        0,
+        1,
+        2,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 41,
+      "seed": 41,
+      "dice": 4,
+      "board": [
+        0,
+        2,
+        1,
+        1,
+        0,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 42,
+      "seed": 42,
+      "dice": 4,
+      "board": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 43,
+      "seed": 43,
+      "dice": 4,
+      "board": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 44,
+      "seed": 44,
+      "dice": 4,
+      "board": [
+        0,
+        0,
+        0,
+        1,
+        2,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 45,
+      "seed": 45,
+      "dice": 4,
+      "board": [
+        0,
+        0,
+        2,
+        2,
+        0,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 46,
+      "seed": 46,
+      "dice": 4,
+      "board": [
+        2,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 47,
+      "seed": 47,
+      "dice": 4,
+      "board": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 48,
+      "seed": 48,
+      "dice": 4,
+      "board": [
+        0,
+        1,
+        1,
+        0,
+        2,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 49,
+      "seed": 49,
+      "dice": 4,
+      "board": [
+        2,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 50,
+      "seed": 50,
+      "dice": 4,
+      "board": [
+        0,
+        0,
+        2,
+        1,
+        0,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 51,
+      "seed": 51,
+      "dice": 4,
+      "board": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 52,
+      "seed": 52,
+      "dice": 4,
+      "board": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 53,
+      "seed": 53,
+      "dice": 4,
+      "board": [
+        0,
+        1,
+        0,
+        1,
+        2,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 54,
+      "seed": 54,
+      "dice": 4,
+      "board": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 55,
+      "seed": 55,
+      "dice": 4,
+      "board": [
+        1,
+        2,
+        0,
+        0,
+        0,
+        1
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 56,
+      "seed": 56,
+      "dice": 4,
+      "board": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 57,
+      "seed": 57,
+      "dice": 4,
+      "board": [
+        1,
+        0,
+        1,
+        0,
+        2,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 58,
+      "seed": 58,
+      "dice": 4,
+      "board": [
+        0,
+        2,
+        0,
+        0,
+        1,
+        1
+      ],
+      "value": -1,
+      "source": "random"
+    },
+    {
+      "id": 59,
+      "seed": 59,
+      "dice": 4,
+      "board": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 60,
+      "seed": 60,
+      "dice": 4,
+      "board": [
+        0,
+        1,
+        2,
+        0,
+        1,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 61,
+      "seed": 61,
+      "dice": 4,
+      "board": [
+        0,
+        2,
+        0,
+        1,
+        1,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 62,
+      "seed": 62,
+      "dice": 4,
+      "board": [
+        1,
+        2,
+        0,
+        0,
+        1,
+        0
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 63,
+      "seed": 63,
+      "dice": 4,
+      "board": [
+        0,
+        0,
+        2,
+        2,
+        0,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 64,
+      "seed": 64,
+      "dice": 4,
+      "board": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 65,
+      "seed": 65,
+      "dice": 4,
+      "board": [
+        0,
+        0,
+        2,
+        1,
+        1,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 66,
+      "seed": 66,
+      "dice": 4,
+      "board": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 67,
+      "seed": 67,
+      "dice": 4,
+      "board": [
+        2,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "value": -1,
+      "source": "random"
+    },
+    {
+      "id": 68,
+      "seed": 68,
+      "dice": 4,
+      "board": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        3
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 69,
+      "seed": 69,
+      "dice": 4,
+      "board": [
+        2,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 70,
+      "seed": 70,
+      "dice": 4,
+      "board": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 71,
+      "seed": 71,
+      "dice": 4,
+      "board": [
+        1,
+        0,
+        1,
+        0,
+        2,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 72,
+      "seed": 72,
+      "dice": 4,
+      "board": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 73,
+      "seed": 73,
+      "dice": 4,
+      "board": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 74,
+      "seed": 74,
+      "dice": 4,
+      "board": [
+        1,
+        0,
+        1,
+        0,
+        2,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 75,
+      "seed": 75,
+      "dice": 4,
+      "board": [
+        0,
+        0,
+        0,
+        3,
+        1,
+        0
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 76,
+      "seed": 76,
+      "dice": 4,
+      "board": [
+        0,
+        1,
+        1,
+        2,
+        0,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 77,
+      "seed": 77,
+      "dice": 4,
+      "board": [
+        0,
+        2,
+        2,
+        0,
+        0,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 78,
+      "seed": 78,
+      "dice": 4,
+      "board": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 79,
+      "seed": 79,
+      "dice": 4,
+      "board": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 80,
+      "seed": 80,
+      "dice": 4,
+      "board": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 81,
+      "seed": 81,
+      "dice": 4,
+      "board": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 82,
+      "seed": 82,
+      "dice": 4,
+      "board": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 83,
+      "seed": 83,
+      "dice": 4,
+      "board": [
+        1,
+        1,
+        0,
+        2,
+        0,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 84,
+      "seed": 84,
+      "dice": 4,
+      "board": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 85,
+      "seed": 85,
+      "dice": 4,
+      "board": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 86,
+      "seed": 86,
+      "dice": 4,
+      "board": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 87,
+      "seed": 87,
+      "dice": 4,
+      "board": [
+        0,
+        2,
+        0,
+        0,
+        1,
+        1
+      ],
+      "value": -1,
+      "source": "random"
+    },
+    {
+      "id": 88,
+      "seed": 88,
+      "dice": 4,
+      "board": [
+        0,
+        2,
+        1,
+        1,
+        0,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 89,
+      "seed": 89,
+      "dice": 4,
+      "board": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 90,
+      "seed": 90,
+      "dice": 4,
+      "board": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 91,
+      "seed": 91,
+      "dice": 4,
+      "board": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 92,
+      "seed": 92,
+      "dice": 4,
+      "board": [
+        0,
+        0,
+        0,
+        1,
+        3,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 93,
+      "seed": 93,
+      "dice": 4,
+      "board": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 94,
+      "seed": 94,
+      "dice": 4,
+      "board": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 95,
+      "seed": 95,
+      "dice": 4,
+      "board": [
+        0,
+        0,
+        0,
+        0,
+        3,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 96,
+      "seed": 96,
+      "dice": 4,
+      "board": [
+        0,
+        0,
+        2,
+        1,
+        0,
+        1
+      ],
+      "value": 1,
+      "source": "random"
+    },
+    {
+      "id": 97,
+      "seed": 97,
+      "dice": 4,
+      "board": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 98,
+      "seed": 98,
+      "dice": 4,
+      "board": [
+        1,
+        0,
+        2,
+        0,
+        1,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 99,
+      "seed": 99,
+      "dice": 4,
+      "board": [
+        0,
+        1,
+        0,
+        2,
+        1,
+        0
+      ],
+      "value": 0,
+      "source": "random"
+    },
+    {
+      "id": 100,
+      "board": [
+        2,
+        0,
+        2,
+        0,
+        0,
+        0
+      ],
+      "value": 0,
+      "source": "curated",
+      "note": "1,1,3,3",
+      "dice": 4
+    },
+    {
+      "id": 101,
+      "board": [
+        0,
+        0,
+        0,
+        0,
+        2,
+        2
+      ],
+      "value": 0,
+      "source": "curated",
+      "note": "Two 5s two 6s",
+      "dice": 4
+    },
+    {
+      "id": 102,
+      "board": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "value": 0,
+      "source": "curated",
+      "note": "One of each 1-4",
+      "dice": 4
+    },
+    {
+      "id": 103,
+      "board": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        0
+      ],
+      "value": 0,
+      "source": "curated",
+      "note": "Two 4s two 5s",
+      "dice": 4
+    },
+    {
+      "id": 104,
+      "board": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "value": 1,
+      "source": "curated",
+      "note": "Uniform 6d",
+      "dice": 6
+    },
+    {
+      "id": 105,
+      "board": [
+        0,
+        0,
+        3,
+        3,
+        0,
+        0
+      ],
+      "value": 1,
+      "source": "curated",
+      "note": "Three 3s three 4s",
+      "dice": 6
+    },
+    {
+      "id": 106,
+      "board": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        8
+      ],
+      "value": 0,
+      "source": "curated",
+      "note": "All 6s",
+      "dice": 8
+    },
+    {
+      "id": 107,
+      "board": [
+        8,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "value": 0,
+      "source": "curated",
+      "note": "All 1s",
+      "dice": 8
+    },
+    {
+      "id": 108,
+      "board": [
+        4,
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      "value": -1,
+      "source": "curated",
+      "note": "Four 1s four 2s",
+      "dice": 8
+    },
+    {
+      "id": 109,
+      "board": [
+        2,
+        2,
+        2,
+        2,
+        0,
+        0
+      ],
+      "value": 0,
+      "source": "curated",
+      "note": "No 5s or 6s",
+      "dice": 8
+    },
+    {
+      "id": 110,
+      "board": [
+        0,
+        0,
+        0,
+        0,
+        4,
+        4
+      ],
+      "value": 0,
+      "source": "curated",
+      "note": "Four 5s four 6s",
+      "dice": 8
+    },
+    {
+      "id": 111,
+      "board": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        3
+      ],
+      "value": 1,
+      "source": "curated",
+      "note": "One player can get three 6s",
+      "dice": 8
+    },
+    {
+      "id": 112,
+      "board": [
+        1,
+        1,
+        2,
+        2,
+        1,
+        1
+      ],
+      "value": 1,
+      "source": "curated",
+      "note": "Balanced 8d",
+      "dice": 8
+    },
+    {
+      "id": 113,
+      "board": [
+        0,
+        2,
+        2,
+        2,
+        2,
+        0
+      ],
+      "value": 0,
+      "source": "curated",
+      "note": "No 1s or 6s",
+      "dice": 8
+    },
+    {
+      "id": 114,
+      "board": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        6
+      ],
+      "value": 0,
+      "source": "curated",
+      "note": "Extreme: many 6s",
+      "dice": 8
+    },
+    {
+      "id": 115,
+      "board": [
+        3,
+        3,
+        1,
+        1,
+        0,
+        0
+      ],
+      "value": 0,
+      "source": "curated",
+      "note": "Low pairs",
+      "dice": 8
+    },
+    {
+      "id": 116,
+      "board": [
+        0,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      "value": 0,
+      "source": "curated",
+      "note": "No 1s or 2s",
+      "dice": 8
+    },
+    {
+      "id": 117,
+      "board": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "value": 1,
+      "source": "curated",
+      "note": "Bookends",
+      "dice": 10
+    }
+  ]
+}

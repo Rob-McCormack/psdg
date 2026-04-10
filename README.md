@@ -2,31 +2,40 @@
 
 **Canonical research site:** [https://psdg.pages.dev](https://psdg.pages.dev)
 
-That site is the best place for **how PSDG is framed as a research project**: motivation, definitions, empirical snapshot (blunder vs static rows, protocols), FAQ, technical report summary, related work, and worked examples. It is maintained as a focused documentation site, not as a mirror of everything that might live in a full development tree.
+That site is the best place for **how PSDG is framed as a research project**: motivation, definitions, empirical snapshot (blunder vs static rows, protocols), FAQ, technical report summary, related work, and worked examples.
 
 ---
 
 ## What this GitHub repository is for
 
-This repo holds **public, reproducible artifacts**: the reference **solver**, **benchmark data** (or generators and specifications), and **short instructions** to run them—so others can clone, verify, and extend experiments **without** wading through a private monorepo or a full doc tree on GitHub.
+This repo holds **public, reproducible artifacts** in **Python only** (no JavaScript solver in-tree): the reference **solver**, **benchmark JSON**, and scripts to **generate, verify, and experiment**—without a private monorepo.
 
-It is **intentionally different** from the site’s long-form pages (for example [Technical report (summary)](https://psdg.pages.dev/technical-report-summary.html)). README + code + data here; narrative, tables in context, and caveats on **psdg.pages.dev**.
-
-**Start with the site** if you want a complete understanding of PSDG; **use this repo** if you want to execute and inspect the oracle-facing pieces.
+It is **intentionally different** from the site’s long-form pages—for example [Technical report (summary)](https://psdg.pages.dev/technical-report-summary.html). Narrative and caveats live on **psdg.pages.dev**; this repo is for **clone-and-run** use.
 
 ---
 
-## Repository contents
+## Layout
 
-As this repository is populated, expect roughly:
+```
+psdg/
+├── README.md
+├── LICENSE
+├── solvers/python/     # solver.py, oracle.py, helpers, small blunder JSON fixtures
+└── benchmark/          # *.json suites, Python scripts, output/ logs
+```
 
-| Area | Role |
-|------|------|
-| Solver | Reference implementation(s) (e.g. Python minimax + exchange logic), with runnable entry points |
-| Benchmarks | Published suite(s), seeds, and/or scripts to regenerate or verify JSON |
-| Supporting docs | Minimal in-repo notes (rules snippet, protocol definitions) where they help reproducibility—**not** a second copy of the whole research site |
+See [benchmark/README.md](benchmark/README.md) for script roles and quick commands.
 
-Layout and exact paths will be documented here as files land.
+---
+
+## Quick start
+
+From the repository root:
+
+```bash
+python3 solvers/python/solver.py -r -s 42
+python3 benchmark/verify_benchmark.py benchmark/benchmark_4d.json
+```
 
 ---
 

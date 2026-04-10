@@ -1,0 +1,15 @@
+{"run":1,"seed":100,"dice":4,"board":[0,2,2,0,0,0],"top_a":2,"top_b":5,"value":0,"a_crystal":[2,3],"b_crystal":[5,1],"tb_depth":2,"time_s":0.406}
+{"run":2,"seed":101,"dice":4,"board":[0,1,2,0,0,1],"top_a":2,"top_b":5,"value":1,"a_crystal":[2,1],"b_crystal":[5,1],"tb_depth":0,"time_s":0.519}
+{"run":3,"seed":102,"dice":4,"board":[0,1,1,2,0,0],"top_a":2,"top_b":1,"value":0,"a_crystal":[2,3],"b_crystal":[1,2],"tb_depth":2,"time_s":0.33}
+{"run":4,"seed":103,"dice":4,"board":[0,1,2,1,0,0],"top_a":2,"top_b":1,"value":0,"a_crystal":[2,3],"b_crystal":[1,2],"tb_depth":2,"time_s":0.247}
+{"run":5,"seed":104,"dice":4,"board":[1,1,0,1,1,0],"top_a":2,"top_b":2,"value":1,"a_crystal":[2,1],"b_crystal":[2,1],"tb_depth":0,"time_s":0.111}
+{"run":6,"seed":105,"dice":4,"board":[0,1,0,1,2,0],"top_a":2,"top_b":2,"value":1,"a_crystal":[2,1],"b_crystal":[2,1],"tb_depth":0,"time_s":0.105}
+{"run":7,"seed":106,"dice":4,"board":[0,1,1,1,0,1],"top_a":2,"top_b":3,"value":1,"a_crystal":[2,1],"b_crystal":[3,1],"tb_depth":0,"time_s":0.447}
+{"run":8,"seed":107,"dice":4,"board":[1,1,0,1,0,1],"top_a":2,"top_b":3,"value":1,"a_crystal":[2,1],"b_crystal":[3,1],"tb_depth":0,"time_s":0.252}
+{"run":9,"seed":108,"dice":4,"board":[1,1,0,1,1,0],"top_a":2,"top_b":3,"value":0,"a_crystal":[2,1],"b_crystal":[3,1],"tb_depth":2,"time_s":0.698}
+{"run":10,"seed":109,"dice":4,"board":[1,1,1,0,1,0],"top_a":2,"top_b":4,"value":0,"a_crystal":[2,1],"b_crystal":[4,1],"tb_depth":2,"time_s":0.92}
+{"run":11,"seed":110,"dice":4,"board":[1,2,0,0,1,0],"top_a":2,"top_b":4,"value":0,"a_crystal":[2,1],"b_crystal":[4,2],"tb_depth":2,"time_s":0.44}
+{"run":12,"seed":111,"dice":4,"board":[0,1,1,0,2,0],"top_a":2,"top_b":5,"value":0,"a_crystal":[2,1],"b_crystal":[5,1],"tb_depth":2,"time_s":0.155}
+{"run":13,"seed":112,"dice":4,"board":[0,1,1,1,1,0],"top_a":2,"top_b":5,"value":0,"a_crystal":[2,1],"b_crystal":[5,1],"tb_depth":2,"time_s":0.299}
+{"run":14,"seed":113,"dice":4,"board":[0,2,0,1,0,1],"top_a":2,"top_b":1,"value":1,"a_crystal":[2,1],"b_crystal":[1,2],"tb_depth":0,"time_s":0.1}
+{"run":15,"seed":114,"dice":4,"board":[0,1,0,1,0,2],"top_a":2,"top_b":1,"value":1,"a_crystal":[2,1],"b_crystal":[1,2],"tb_depth":0,"time_s":0.06}

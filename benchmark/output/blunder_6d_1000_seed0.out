@@ -1,0 +1,63 @@
+Blunder test (random crystals, v1.12):
+  Dice: 6, Trials: 1000, Seed offset: 0
+  B blunders on last draft pick. Compare static vs re-solving at Exchange.
+
+  ... 20/1000 done
+  ... 40/1000 done
+  ... 60/1000 done
+  ... 80/1000 done
+  ... 100/1000 done
+  ... 120/1000 done
+  ... 140/1000 done
+  ... 160/1000 done
+  ... 180/1000 done
+  ... 200/1000 done
+  ... 220/1000 done
+  ... 240/1000 done
+  ... 260/1000 done
+  ... 280/1000 done
+  ... 300/1000 done
+  ... 320/1000 done
+  ... 340/1000 done
+  ... 360/1000 done
+  ... 380/1000 done
+  ... 400/1000 done
+  ... 420/1000 done
+  ... 440/1000 done
+  ... 460/1000 done
+  ... 480/1000 done
+  ... 500/1000 done
+  ... 520/1000 done
+  ... 540/1000 done
+  ... 560/1000 done
+  ... 580/1000 done
+  ... 600/1000 done
+  ... 620/1000 done
+  ... 640/1000 done
+  ... 660/1000 done
+  ... 680/1000 done
+  ... 700/1000 done
+  ... 720/1000 done
+  ... 740/1000 done
+  ... 760/1000 done
+  ... 780/1000 done
+  ... 800/1000 done
+  ... 820/1000 done
+  ... 840/1000 done
+  ... 860/1000 done
+  ... 880/1000 done
+  ... 900/1000 done
+  ... 920/1000 done
+  ... 940/1000 done
+  ... 960/1000 done
+  ... 980/1000 done
+  ... 1000/1000 done
+
+  Re-solving A vs optimal B:    79.9 % A wins
+  Re-solving A vs blundering B: 93.0 % A wins
+  Static A vs optimal B:        79.9 % A wins
+  Static A vs blundering B:    89.7 % A wins
+
+  Static vs re-solving (B blunders): 3.3 pp gap
+
+  (Fixed crystals 6-dice: ~6pp gap. Random crystals should be similar.)

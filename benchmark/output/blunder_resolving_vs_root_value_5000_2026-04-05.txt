@@ -1,0 +1,17 @@
+Cross-join: verify_blunder_root_value_crossjoin.py on benchmark_5000_6d.json
+Date: 2026-04-05 (full run ~63 min, Python reference solver)
+
+  5000/5000 done
+
+Blunder (re-solving) vs benchmark root value
+  Games: 5000
+  B wins (trial outcome -1): 287
+  Root B-win count (value == -1): 399
+  B wins with value != -1 (mismatches): 3
+  Mismatch seeds (seed, json value): [(4167, 1), (4359, 1), (4402, 1)]
+
+Note: On those three opens, solve_from_position at B’s last draft disagrees with the
+last B move on the principal line returned by solve_from_roll (subgame value -1 vs
+line move that is not B-minimizing). Benchmark JSON value matches solve_from_roll (+1).
+Treat as reference-solver principal-line consistency follow-up, not as a counterexample
+to one-ply draft minimax at the last B node.

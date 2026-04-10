@@ -1,0 +1,26 @@
+# node optimal_vs_random_legal.js --trials 10000 --seed 42 --dice 6
+# JS solver import only — no solver source edits. Wall ~31 min (local).
+
+Optimal A vs random legal B
+============================================================
+trials: 10000  dice: 6  seed: 42..10041
+exchange: random-br (random-br = B random gift, A best-response; nash = simultaneous eq. after random draft)
+
+Outcome (random B play):
+  A wins: 9965 (99.65%)
+  Draws:  31 (0.31%)
+  B wins: 4 (0.04%)
+
+Oracle value from opening (both optimal) — distribution of positions:
+  A value +1: 8289 (82.89%)
+  Draw (0):   1698 (16.98%)
+  A value -1: 13 (0.13%)
+
+Curiosity counters:
+  oracle +1 but B won random run: 0 (0.00%)
+  oracle -1 and B won random run: 4 (expected often; B favored)
+
+Draws under random B, by opening oracle:
+  oracle +1 (A wins under optimal) but drew random run: 0 (0.00%)
+  oracle 0  (draw under optimal)   and drew random run: 31 (0.31%)
+  oracle -1 (B wins under optimal) but drew random run: 0 (0.00%)

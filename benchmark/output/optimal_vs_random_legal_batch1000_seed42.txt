@@ -1,0 +1,20 @@
+Optimal A vs random legal B (JS benchmark; solvers unchanged)
+==============================================================
+Command:
+  cd private/psdg/benchmark && node optimal_vs_random_legal.js --trials 1000 --seed 42 --dice 6
+
+exchange: random-br (B uniform random legal gift; A best-responds)
+
+Results (seeds 42..1041, six dice):
+  A wins: 997 (99.70%)
+  Draws:  3 (0.30%)
+  B wins: 0 (0.00%)
+
+Oracle value from opening (both optimal) on same boards:
+  A +1: 878 (87.80%)   Draw: 122 (12.20%)   A -1: 0 (0.00%)
+
+Curiosity: oracle +1 but B won random run: 0
+
+Wall time ~150s (local).
+
+Interpretation: “Legal noise” without competence rarely beats one-step solver-backed A in this protocol; not a substitute for blunder / deployment benchmarks. Poisoned Gift is decisive only after the Crucibles are shaped by draft — random draft already kneecaps B here.

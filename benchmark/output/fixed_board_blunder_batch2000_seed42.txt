@@ -1,0 +1,13 @@
+Batch fixed-board blunder sweep (one random open per seed, enumerate B blunders)
+============================================================
+dice: 6  seeds: 42 .. 2041  (2000 boards)
+total blunder rows enumerated: 6000
+rows where static A worse than re-solve (st-rs < 0): 300/6000
+fraction st-rs<0: 5.00%
+seeds with ≥1 blunder where st-rs < 0: 252/2000
+blunder rows where A's outcome differs (rs vs st): 300/6000
+
+Command (repo root):
+  cd private/psdg/solvers/python && uv run python fixed_board_blunder_sweep.py --batch 2000 --seed 42 --dice 6
+
+Wall time ~20 minutes (local run, 2026-04-02).
