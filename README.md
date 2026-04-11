@@ -1,8 +1,8 @@
 # PSDG — Philosopher’s Stone Dice Game
 
-**Canonical research site:** [https://psdg.pages.dev](https://psdg.pages.dev)
+**In one line:** A tiny exact benchmark where freezing an oracle’s principal-line continuation can lose to blunders.
 
-That site is the best place for **how PSDG is framed as a research project**: motivation, definitions, empirical snapshot (blunder vs static rows, protocols), FAQ, technical report summary, related work, and worked examples.
+**Canonical research site:** [https://psdg.pages.dev](https://psdg.pages.dev) — motivation, definitions, [empirical snapshot](https://psdg.pages.dev/#empirical-snapshot) (blunder vs static rows), FAQ, technical report summary, related work, and worked examples. **Game theory, ML evaluation, and alignment** are different routes into the **same benchmark** under the **same oracle** on that site; this repo is the **clone-and-run** artifact.
 
 ---
 
@@ -10,7 +10,7 @@ That site is the best place for **how PSDG is framed as a research project**: mo
 
 This repo holds **public, reproducible artifacts** in **Python only** (no JavaScript solver in-tree): the reference **solver**, **benchmark JSON**, and scripts to **generate, verify, and experiment**—without a private monorepo.
 
-It is **intentionally different** from the site’s long-form pages—for example [Technical report (summary)](https://psdg.pages.dev/technical-report-summary.html). Narrative and caveats live on **psdg.pages.dev**; this repo is for **clone-and-run** use.
+It is **intentionally different** from the site’s long-form pages—for example [Technical report (summary)](https://psdg.pages.dev/technical-report-summary.html). Narrative and caveats live on **psdg.pages.dev**; numbers and protocols you reproduce start here.
 
 ---
 
