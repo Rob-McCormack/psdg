@@ -1,0 +1,48 @@
+  250/5000 done
+  500/5000 done
+  750/5000 done
+  1000/5000 done
+  1250/5000 done
+  1500/5000 done
+  1750/5000 done
+  2000/5000 done
+  2250/5000 done
+  2500/5000 done
+  2750/5000 done
+  3000/5000 done
+  3250/5000 done
+  3500/5000 done
+  3750/5000 done
+  4000/5000 done
+  4250/5000 done
+  4500/5000 done
+  4750/5000 done
+  5000/5000 done
+
+==================================================================
+Enumerated-blunder static-vs-optimal (draw-independent)
+==================================================================
+  N seeds                                  : 5000
+  seeds with no suboptimal last twist      : 0
+  optimal-vs-optimal B wins (root == -1)   : 399
+
+  EXPECTED over uniform blunder draw (de-noises the sampled 427):
+    expected static B-win count            : 427.7
+    expected flips TO B-win   (c)          : 119.7
+    expected flips AWAY       (b)          : 91.0
+    expected net (c - b)                   : +28.7
+    (sampled single-draw run gave: static 427, c=116, b=88, net +28)
+
+  EXISTENCE (fully draw-independent integer counts):
+    root +1 (A-win): >=1 exploiting blunder :  330   all blunders exploit:    5
+    root +0 (draw ): >=1 exploiting blunder :    0   all blunders exploit:    0
+    root -1 (B-win): >=1 exploiting blunder :  316   all blunders exploit:  304
+
+  *** 330 A-win openings are beatable by AT LEAST ONE worse move ***
+      (draw-independent analog of the sampled '116')
+
+  Among the 3663 A-win openings, exploit-fraction profile:
+    0 (no blunder exploits)         : 3333
+    <50% of blunders exploit        : 306
+    50-99% of blunders exploit      : 19
+    100% (every blunder exploits)   : 5
