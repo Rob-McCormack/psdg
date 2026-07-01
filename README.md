@@ -1,128 +1,164 @@
 # PSDG — Philosopher’s Stone Dice Game
 
-A tiny, exactly solved two-player dice game, used as a measurement instrument for one
-structural failure: a policy can be optimal on what it sees and still lose, because the
-rules fix consequences *before* those consequences become legible.
+PSDG is a small deterministic dice game with an exact solver. The board setup is random; after
+that there is no randomness and no hidden information, so every position can be solved exactly.
+The solver is a ruler, not an opponent — in a solved game nobody beats it.
 
-After a random setup the game is deterministic and perfect-information — small enough to
-solve exactly. That exact solver (the “oracle”) is the ruler. The research question is not
-“can anyone beat the oracle” (in a solved game, no) but “how far do real policies fall
-short, and what makes a frozen optimal plan exploitable when play leaves the expected line?”
+It is a benchmark for two failure modes, each measured against exact ground truth:
 
-Full narrative, definitions, and audience-specific framing live on the site:
-**<https://psdg.pages.dev>**. This repository is the clone-and-run artifact: Python reference
-solver, seeded benchmark data, and scripts to reproduce the numbers.
+1. **Representation failure.** A tabular learner solves the game from the full state, but fails
+   when it sees only the dice tops. The dropped information (the committed *facings*) makes some
+   positions *alias* — distinct states that look identical yet need different optimal moves —
+   which appears as an enumerable regret floor, not a training artifact.
+2. **Deployment failure.** An oracle-derived plan becomes exploitable when it is frozen instead
+   of re-solved after the opponent leaves the expected line.
 
------
-
-## The result in one table
-
-Five-thousand-game suite, six board dice, random crystals, seeds 42–5041.
-
-| Setup                                                          | Exchange protocol          | B wins            |
-|----------------------------------------------------------------|----------------------------|-------------------|
-| Optimal vs optimal (baseline)                                  | —                          | 399 / 5000 (8.0%) |
-| B blunders last draft pick; A **re-solves** at the Exchange    | simultaneous or sequential | 287 / 5000 (5.7%) |
-| B blunders last draft pick; A plays a **static** principal line | sequential                 | 427 / 5000 (8.5%) |
-| B blunders last draft pick; A plays a **static** principal line | simultaneous               | 347 / 5000 (6.9%) |
-
-Optimal-vs-optimal full split: A 3663 (73.3%), draws 938 (18.8%), B 399 (8.0%).
-
-**How to read it.** The load-bearing comparison is static (8.5% / 6.9%) versus re-solving
-(5.7%) on the *same* seeds: that gap is the cost of freezing an ex-ante plan instead of
-re-optimising once the opponent deviates. The re-solving row sits *below* the
-optimal-vs-optimal baseline — a forced last-pick blunder mostly *costs* B wins
-(287 of those B wins are a near-subset of the 399), so that row is not “minimax beaten.”
-
-The static-sequential row is the one where a blundering B can win *more* often (427) than an
-optimal B (399) against a frozen A. That **net** excess (427 > 399) is an **exact
-within-suite fact** but **borderline as a generalization** — a *paired* analysis on the
-same seeds gives McNemar exact two-sided p ≈ 0.058. The robust, draw-independent fact is the
-**existence** result: **330 of 3663** A-win openings are beatable by **at least one** worse B
-move under static deployment (a single sampled blunder draw catches 116 of them; enumerating
-all suboptimal last twists confirms 427 is the expectation, ≈ 427.7, not a lucky draw). The
-A-side traps are narrow (most sprung by only a minority of B’s possible wrong moves) and are
-nearly offset by B’s mostly-harmless blunders, which is why the net stays small. Method and
-counts: <https://psdg.pages.dev/faq.html#inversion-significance>.
-
-A separate noise baseline (10,000 games, seeds 42–10041, six dice): optimal A vs
-uniformly-random-legal B gives A 9965 (99.65%), draws 31 (0.31%), B 4 (0.04%) — and all
-four B wins come from openings already valued as B-wins. Pure noise essentially never
-beats the oracle; the exploitation above is specific to *structured* deviation against a
-*frozen* policy.
+The point is not that PSDG is hard. The point is that, in a solved game, we can say exactly when
+a failure comes from the learner, from the observation, or from the deployment protocol.
 
 -----
 
-## The game in 60 seconds
+## Representation failure: solving the full state, failing on a lossy one
 
-Two players, six gray board dice, one Red Crystal die each. Only the setup is random;
-after that, every move follows the rules with no further rolls and nothing hidden.
+Train the same tabular agent two ways, changing only what it observes.
 
-1. **Draft** — players alternate (A first) taking board dice. On each pick you *Twist* the
-   die to choose its facing value. That facing is a Phase-2 commitment: it becomes the die’s
-   top after the Tumble. You build a sorted Crucible of three dice.
-1. **Poisoned Gift (Exchange)** — each player gives the opponent one Crucible die and sets
-   the facing it arrives on. Eligibility can force the choice: if any top value repeats
-   among your three Crucible dice plus your Crystal, you must gift from the lowest repeated
-   value. You never gift the Crystal. In v1.13 the reveal is simultaneous.
-1. **Score (Phase 1)** — a die scores 1 if its top is 6 or equals your Red Crystal’s top,
-   else 0. Max 3.
-1. **Tumble** — rotate each Crucible die 90° forward; its facing becomes the new top.
-1. **Score (Phase 2)** — score again under the new tops. Higher two-phase total wins.
-1. **Immortal tiebreaker** — if tied, a scripted sequence of Crystal tumbles/flips rescores
-   the frozen Crucibles until a verdict or a draw.
+- With the full state (tops and the committed facings) it converges to optimal play: zero regret
+  against the solver, on every seed and every training budget.
+- With tops only (facings dropped) it does not. Trained to 8× past convergence, 0 of 5 seeds
+  reach optimal play, and the shortfall does not fall to zero — it moves between the draft and
+  exchange stages.
 
-The point: two boards with identical *tops* can require opposite optimal play, because the
-*facings* committed during the draft encode Phase 2 and are not visible in a “tops now”
-summary. Any policy whose state is the board snapshot aliases positions the rules keep
-distinct.
+This is not just undertraining. A policy that observes only the tops has lost the information
+needed to distinguish some optimal actions; more training on the same observation cannot recover
+facings that are absent from the input. (A learner that instead conditioned on the move *history*
+could reconstruct them — which is the point: the deciding information has to enter somewhere.)
+The limit is enumerable from the rules, before any learning — a regret floor that no memoryless
+tops-only policy can beat (deterministic or stochastic; a history-conditioned policy is a
+different class, per the parenthetical above):
 
-Canonical rules: [`RULES.md`](RULES.md) (v1.13; identical to the site’s Rules page).
+> Exchange floor 0.021, Draft floor 0.0097 (oracle win/loss units) on the demo opening — a
+> property of the input, independent of learner, opponent, or compute.
+
+Trained tabular Q-learning, player A against the solver, demo opening, 5 seeds. Terminal reward
+only; the solver never labels moves during training, it grades afterward.
+
+| observation | learns optimal play? | loss vs the solver | more training helps? |
+|-------------|----------------------|--------------------|----------------------|
+| full (tops + facings) | yes — 0 regret, 100% win, every seed and budget | 0% | already optimal |
+| tops-only (facings dropped) | no | 2–6% (budget-dependent) | no — 0/5 seeds solved at 8× |
+
+The loss percentage is not the headline; it is budget-sensitive, and we say so. The stable
+number is the enumerated floor. The pattern generalises: across a seeded suite of A-win openings
+the full-state learner wins 100% on every opening, while the tops-only learner turns wins into
+losses on 15 of 16 openings that carry a floor — and control openings with no exchange floor
+still lose, through aliasing at the draft stage.
+
+For an RL or AI-safety reader, PSDG separates two things a single win-rate blurs together:
+whether the method can learn the game (it can), and whether the agent can observe what governs
+the outcome (it cannot). The first yields to a stronger training signal; the second does not,
+and the only remedy is a sufficient state. Measured against ground truth, and bounded below by
+enumeration.
+
+-----
+
+## Deployment failure: a frozen plan off the expected line
+
+Take optimal play, let the opponent B deviate, and compare an A that re-solves the realised
+position against an A that replays a static principal-line plan. Five-thousand-game suite, six
+board dice, random crystals, seeds 42–5041.
+
+| Setup | Exchange protocol | B wins |
+|-------|-------------------|--------|
+| Optimal vs optimal (baseline) | — | 399 / 5000 (8.0%) |
+| B blunders last draft pick; A re-solves at the Exchange | simultaneous or sequential | 284 / 5000 (5.7%) |
+| B blunders last draft pick; A plays a static principal line | sequential | 426 / 5000 (8.5%) |
+| B blunders last draft pick; A plays a static principal line | simultaneous | 346 / 5000 (6.9%) |
+
+The comparison that matters is static (8.5% / 6.9%) versus re-solving (5.7%) on the same seeds:
+that gap is the cost of freezing an ex-ante plan instead of re-optimising once the opponent
+deviates. A blundering B beats a frozen A more often (426) than an optimal B does (399) — a fact
+within this suite, though borderline as a generalisation (paired McNemar exact two-sided
+p ≈ 0.068). The draw-independent statement is the existence result: 320 of 3663 A-win openings
+are beatable by at least one worse B move under static deployment. Method and counts:
+<https://psdg.pages.dev/faq.html#inversion-significance>.
+
+A noise baseline (10,000 games): optimal A vs uniformly-random-legal B gives A 99.65%, and the
+four B wins are openings already valued as B-wins. Noise essentially never beats the solver; the
+exploitation is specific to structured deviation against a frozen policy.
 
 -----
 
 ## Reproduce
 
-Requirements: **Python 3.9+, standard library only** (no third-party dependencies).
+Requirements: Python 3.9+, standard library only (no third-party dependencies).
 
 ```bash
 git clone https://github.com/Rob-McCormack/psdg.git
 cd psdg
 
-# Solve a single seeded game from the opening roll
-python3 solvers/python/solver.py -r -s 42
+# Solve a seeded game end-to-end (4 dice, a few seconds):
+python3 solvers/python/solver.py -d 4 -s 42
 
-# Verify a published benchmark JSON against the solver
+# Verify a published benchmark against the solver:
 python3 benchmark/verify_benchmark.py benchmark/benchmark_4d.json
 ```
 
-Reproduce the headline blunder split:
+The representation result. The floor is enumerated from the rules and needs no training; the
+learning runs train first, then grade against the solver.
 
 ```bash
-# B-win counts and oracle-root-value -> realized-outcome breakdown
-python3 benchmark/blunder_test_benchmark.py --print-outcomes                          # re-solving
-python3 benchmark/blunder_test_benchmark.py --print-outcomes --static                 # static, sequential
-python3 benchmark/blunder_test_benchmark.py --print-outcomes --static --static-simultaneous-exchange  # static, simultaneous
+# The enumerated Exchange floor on the demo opening — no training (~10s):
+python3 ml/aliasing_exchange.py
+# -> tops-only floor 0.0210, full-state floor 0.000
+
+# Full vs tops-only observation, weak and solver opponents — the 2x2 (minutes):
+python3 ml/sweep_matrix.py 500000 0,1,2,3,4 400
+
+# "Did we just undertrain?" — tops-only out to 8x the budget (many minutes;
+# its header also prints the demo Draft floor, 0.0097):
+python3 ml/robustness_budget.py 500000,1000000,2000000,4000000 0,1,2,3,4 400 tops_only
+
+# Cross-opening: control openings with no Exchange floor still carry a Draft floor (minutes):
+python3 ml/structural_floors_cross.py
 ```
 
-Cross-check the 5.7% re-solving row against stored root values:
+The deployment result (the blunder / static-vs-re-solving split):
 
 ```bash
-python3 benchmark/verify_blunder_root_value_crossjoin.py
-# expected: 284/287 B wins pair with value == -1
+python3 benchmark/blunder_test_benchmark.py --print-outcomes            # re-solving
+python3 benchmark/blunder_test_benchmark.py --print-outcomes --static   # static, sequential
+python3 benchmark/enumerate_blunder_static_vs_optimal.py                # draw-independent count
+# expected: ~424.7 expected static B-wins; 320/3663 A-win openings beatable by >=1 worse move
 ```
 
-Paired static-vs-optimal analysis (the 427 > 399 inversion):
+-----
 
-```bash
-# Sampled single blunder draw: 2x2, discordant cells, McNemar exact p
-python3 benchmark/mcnemar_static_vs_optimal.py
-# expected: c=116 (to B-win, all A-win roots), b=88 (away), net +28, p ~ 0.058
+## The game
 
-# Draw-independent: enumerate ALL suboptimal last twists per seed
-python3 benchmark/enumerate_blunder_static_vs_optimal.py
-# expected: expected static B-wins ~427.7; 330/3663 A-win openings beatable by >=1 worse move
-```
+![PSDG board](https://psdg.pages.dev/images/homepage-board-1200.jpg)
+
+Learn basic play in about 3 minutes — [Watch on YouTube](https://youtu.be/N3j1XJp2ZsI). The
+tiebreak / Immortal rule takes a few more minutes —
+[demo & script](https://psdg.pages.dev/youtube-demo.html).
+
+### Rules in brief
+
+Six dice are rolled onto a shared board; each player also holds a Red Crystal value. After setup
+the game is fully deterministic and fully observable.
+
+- Players alternately draft dice into their Crucibles. On taking a die, a player locks its
+  *facing* value (the side turned toward the players) — distinct from its current *top*.
+- Players then gift one eligible Crucible die to the opponent (the Exchange). You never gift the
+  Crystal; eligibility can force the choice.
+- Phase 1 scores the current tops. All dice then Tumble — each die’s facing becomes its new top
+  — and Phase 2 scores again. A tie is broken by a fixed deterministic procedure (the Immortal
+  tiebreaker).
+- A die scores if its top is 6 or matches the holder’s Red Crystal.
+
+The mechanism the research turns on: a choice locked early (the facing) becomes payoff-relevant
+later (after the Tumble), once ownership and orientation have changed — so the current tops alone
+are not a sufficient description of the state. Full mechanics and the tiebreaker:
+[`RULES.md`](RULES.md) (v1.13; identical to the site’s Rules page).
 
 -----
 
@@ -131,79 +167,44 @@ python3 benchmark/enumerate_blunder_static_vs_optimal.py
 ```
 psdg/
 ├── RULES.md            # canonical rules, v1.13
-├── solvers/python/     # solver.py, oracle.py, helpers, small blunder JSON fixtures
-├── benchmark/          # *.json suites, Python scripts, output/ logs
+├── solvers/python/     # solver.py (the oracle), helpers, small JSON fixtures
+├── ml/                 # tabular learner + oracle-graded audit (representation result)
+├── benchmark/          # *.json suites, scripts, output/ logs (deployment result)
 ├── LICENSE             # MIT
 └── README.md
 ```
 
-Reference Python solver, the seeded benchmark JSON (e.g. `benchmark_4d.json`,
-`benchmark_5000_6d.json`), verification and blunder scripts (including
-`mcnemar_static_vs_optimal.py` and `enumerate_blunder_static_vs_optimal.py`), and the output
-logs they produce. The numbers above are reproducible from this tree.
-
-## What is not in this repository
-
-Some drivers used to generate auxiliary results live only in a private development tree
-under `private/psdg/` and are **not** shipped here:
-
-- the random-legal baseline driver (`optimal_vs_random_legal.js`, Node)
-- the worked-example harness (`blunder_test_random_crystals.js`, Node)
-- the hand-authored heuristic pilot (`pilot_heuristic_facing6_vs_oracle.py`)
-- the JavaScript cross-check solver (`solver.js`)
-
-Where the site cites those, the *output logs* may be included here but the generating
-script is not. Porting the random-legal driver to Python is the most useful gap to close,
-since that baseline anchors the “noise doesn’t win” contrast.
-
------
-
-## Terms
-
-- **Oracle / solver** — same artifact, two names: it returns exact value, legal moves,
-  the principal line, and per-move regret under the published embedding.
-- **Principal line** — the optimal continuation the solver returns from a given roll.
-- **Blunder** — a move that is suboptimal under that embedding (in the suite, B’s last
-  draft pick is off the principal line).
-- **Static vs re-solving** — at the Exchange, A either replays the principal-line gift
-  (“static”) or recomputes the gift on the realised position (“re-solving”). This is a
-  deployment choice, not a change to the game.
-- **Embedding / protocol (P)** — the fixed conventions under which “optimal” is defined:
-  the solution concept, the Exchange timing, and the static-vs-re-solving rule. Realised
-  “optimal” outcomes are joint with P.
-
------
-
-## Known issues
-
-Three seeds (4167, 4359, 4402) record a B win in the re-solving trial despite a stored root
-value of +1: on those openings the principal line from `solve_from_roll` disagrees with
-`solve_from_position` at B’s last draft node. This is a reference-solver consistency item
-(principal-line witness selection) under review — about 0.06% of the suite — not benchmark
-noise and not a refutation of draft minimax. See
-`benchmark/output/blunder_resolving_vs_root_value_5000_*.txt`.
+The numbers on this page are reproducible from this tree. Narrative, definitions, worked
+exhibits, and audience-specific framing live on the site (below).
 
 -----
 
 ## Scope
 
-PSDG isolates a structural pattern in one small exact setting. It does not claim to prove
-anything directly about large or deployed systems; the extrapolation is that gaps which are
-exactly measurable here are plausible, and usually harder to detect, where noise and
-incomplete specifications dominate. Numbers are specific to this embedding.
+PSDG isolates two structural patterns in one small solved setting; it does not claim to prove
+anything directly about large or deployed systems. The extrapolation is only that gaps which are
+measurable and lower-bounded here are plausible, and usually far harder to detect, where noise
+and incomplete specifications dominate. All numbers are specific to this embedding (the fixed
+conventions under which “optimal” is defined). The representation result is tabular, on a seeded
+opening family with fixed crystals; function approximation and history-conditioned agents are
+named, open extensions, not claims made here.
 
 -----
 
 ## Citing
 
-> PSDG (Philosopher’s Stone Dice Game): a small, exactly solved game where a frozen
-> oracle-derived plan can lose to a blundering opponent. Misspecification is “optimally
-> wrong”; deployment is fragile when the wrong commitments are frozen.
+> PSDG (Philosopher’s Stone Dice Game): a small, exactly solved game where (1) a learner that
+> solves the full-state game fails under a lossy tops-only state — a representation insufficiency
+> enumerable from the rules, not recoverable by more training on the same input — and (2) a
+> frozen oracle-derived plan is exploitable once the opponent leaves the expected line.
 
 Rob McCormack, independent researcher. Canonical site: <https://psdg.pages.dev>
-
-*(Consider adding a `CITATION.cff` so GitHub renders a “Cite this repository” button.)*
 
 ## License
 
 MIT — see [`LICENSE`](LICENSE).
+
+-----
+
+For the deep dive — full derivations, FAQs, and worked exhibits — see the technical site:
+<https://psdg.pages.dev/>
