@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use PSDG in your research, please cite it as below."
+title: "PSDG — Philosopher's Stone Dice Game"
+abstract: >-
+  A small deterministic dice game with an exact solver, used as a benchmark for two measurable
+  failure modes: representation insufficiency (a learner that solves the full-state game fails
+  under a lossy tops-only state, an enumerable regret floor) and deployment fragility (a frozen
+  oracle-derived plan is exploitable once the opponent leaves the expected line).
+type: software
+authors:
+  - family-names: McCormack
+    given-names: Rob
+repository-code: "https://github.com/Rob-McCormack/psdg"
+url: "https://psdg.pages.dev"
+license: MIT
+keywords:
+  - AI safety
+  - reinforcement learning
+  - state abstraction
+  - representation learning
+  - game theory
+  - benchmark

@@ -168,7 +168,7 @@ are not a sufficient description of the state. Full mechanics and the tiebreaker
 
 -----
 
-## What is in this repository
+## Repository map
 
 ```
 psdg/
@@ -182,6 +182,22 @@ psdg/
 
 The numbers on this page are reproducible from this tree. Narrative, definitions, worked
 exhibits, and audience-specific framing live on the site (below).
+
+Direct links (for readers, and for automated tools that only parse this page):
+
+- Canonical rules — [RULES.md](https://github.com/Rob-McCormack/psdg/blob/main/RULES.md)
+- Representation result (code) — [ml/](https://github.com/Rob-McCormack/psdg/tree/main/ml) · [ml/README.md](https://github.com/Rob-McCormack/psdg/blob/main/ml/README.md)
+- Deployment result (code + data) — [benchmark/](https://github.com/Rob-McCormack/psdg/tree/main/benchmark)
+- Exact solver — [solver.py](https://github.com/Rob-McCormack/psdg/blob/main/solvers/python/solver.py) · [oracle.py](https://github.com/Rob-McCormack/psdg/blob/main/solvers/python/oracle.py)
+- Machine-readable map — [llms.txt](https://psdg.pages.dev/llms.txt)
+
+### Feed this repo to an LLM
+
+The results live in `ml/` and `benchmark/`, not just this page. To hand a model the whole repo at
+once, download the always-current archive and upload it to ChatGPT or Claude — no maintenance,
+GitHub regenerates it on every download:
+
+- Repo ZIP (latest `main`): <https://github.com/Rob-McCormack/psdg/archive/refs/heads/main.zip>
 
 -----
 

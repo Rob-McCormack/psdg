@@ -1,0 +1,37 @@
+# PSDG — Philosopher's Stone Dice Game
+
+> A small deterministic dice game with an exact solver, used as a benchmark for two measurable
+> failure modes. (1) Representation insufficiency: a tabular learner that solves the game from
+> the full state fails when it observes only the dice tops, because the rules make an early,
+> hidden commitment (a die's "facing") decide the outcome later — an information loss that shows
+> up as an enumerable regret floor, not a training artifact. (2) Deployment fragility: an exact,
+> oracle-derived plan becomes exploitable when it is frozen instead of re-solved after the
+> opponent leaves the expected line. Because the game is solved, both failures are measured
+> against exact ground truth and (for the representation case) bounded below by enumeration.
+
+## Repository and code
+- [Public repository](https://github.com/Rob-McCormack/psdg): clone-and-run solver, ml/, benchmark/
+- [Repo ZIP (latest main, always current)](https://github.com/Rob-McCormack/psdg/archive/refs/heads/main.zip)
+- [Canonical rules (RULES.md)](https://github.com/Rob-McCormack/psdg/blob/main/RULES.md)
+- [ml/ — representation result (learner + oracle-graded audit)](https://github.com/Rob-McCormack/psdg/tree/main/ml)
+- [benchmark/ — deployment result (suites, scripts, logs)](https://github.com/Rob-McCormack/psdg/tree/main/benchmark)
+- [solvers/python/solver.py — the exact solver](https://github.com/Rob-McCormack/psdg/blob/main/solvers/python/solver.py)
+
+## Key site pages
+- [Learning the wrong state (trained-agent result)](https://psdg.pages.dev/learning-the-wrong-state.html)
+- [PSDG for ML](https://psdg.pages.dev/ml.html)
+- [PSDG for AI safety](https://psdg.pages.dev/aisafety.html)
+- [Research overview](https://psdg.pages.dev/research.html)
+- [Rules (v1.13)](https://psdg.pages.dev/rules.html)
+- [FAQ](https://psdg.pages.dev/faq.html)
+- [Tops-only aliasing at the Exchange (worked example)](https://psdg.pages.dev/aliasing-exchange-example.html)
+
+## Key results
+- Representation: the full-state learner reaches 0 regret / 100% win on every seed and every
+  training budget; the tops-only learner never does — 0 of 5 seeds reach optimal even at 8x the
+  converged budget. The training-proof anchor is an enumerated lower bound: Exchange floor 0.021,
+  Draft floor 0.0097 (oracle win/loss units) on the demo opening, which no memoryless tops-only
+  policy can beat. The trained loss rate (2-6%) is budget-sensitive and is not the headline.
+- Deployment: on one 5000-game suite, a frozen static plan concedes 8.5% / 6.9% B-wins versus
+  5.7% when A re-solves; the draw-independent existence result is 320 of 3663 A-win openings
+  beatable by at least one worse B move under static deployment.
