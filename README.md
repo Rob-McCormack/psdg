@@ -55,6 +55,8 @@ Train the same tabular Q-learner two ways, changing only what it observes. Termi
 
 The loss percentage is budget-sensitive and is *not* the headline; the stable number is the enumerated floor (Exchange **0.021**, Draft **0.0097** on the demo opening, in oracle win/loss units). We tested the "just undertrained?" objection directly, to 8× the converged budget: the raw loss shrinks, but the gap to full-state never closes and never stabilises. Across a seeded suite of A-win openings, the full-state learner wins **100% on every opening**; tops-only converts wins into losses on **15 of 16** openings carrying a floor — and control openings with *no* Exchange floor still lose, through draft-stage aliasing.
 
+> More sophisticated training cannot help, because the failure isn't in the optimizer: the distinguishing information is absent from the input — and every method that appears to help works by putting it back.
+
 Two findings worth knowing before you object:
 
 - **A trained aliased agent pays *more* than the floor** (mean excess regret ~0.13 vs structural floor ~0.05). The floor is a lower bound; optimizing around a lossy representation makes it worse.
