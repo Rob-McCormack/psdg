@@ -2,9 +2,15 @@
 
 PSDG is a small deterministic dice game with an exact solver. The board setup is random; after
 that there is no randomness and no hidden information, so every position can be solved exactly.
-The solver is a ruler, not an opponent — in a solved game nobody beats it.
 
-It is a benchmark for two failure modes, each measured against exact ground truth:
+The simplest way to put it: PSDG creates positions that look identical if you track only the
+obvious current features (the dice tops), yet require opposite optimal moves. The missing
+information was never secret — a player created it with an earlier choice, which was then dropped
+from the agent’s representation. Because the game has an exact solver, I can measure exactly when
+that blind spot can turn a provable win into a loss.
+
+It is a benchmark for two failure modes, each measured against that exact ground truth (the
+solver is a ruler, not an opponent — in a solved game nobody beats it):
 
 1. **Representation failure.** A tabular learner solves the game from the full state, but fails
    when it sees only the dice tops. The dropped information (the committed *facings*) makes some
