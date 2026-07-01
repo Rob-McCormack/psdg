@@ -16,7 +16,9 @@ A tabletop dice game for ages 8 and up. Learn basic play in about 3 minutes — 
 
 Six dice are rolled onto a shared board; each player holds a Red Crystal value. Players alternately draft dice — locking a *facing* value distinct from the current *top* — then each gifts one eligible die to the opponent (the Exchange). Phase 1 scores the tops; all dice *Tumble* (facing becomes top); Phase 2 scores again. A die scores if its top is 6 or matches the holder's Crystal. Ties resolve by a fixed deterministic procedure.
 
-The load-bearing mechanism: **a choice locked early becomes payoff-relevant later, after ownership and orientation have changed** — so the current tops are not a sufficient description of the state.
+![Ready, Fire, Aim](images/ready-fire-aim.png)
+
+**Ready, fire, aim.** Most games feel like *ready, aim, fire*; PSDG is *ready, fire, aim* — you commit a die's facing in the draft (the Twist) *before* the Tumble and Exchange unpack what it scores, so commitment precedes evaluation. A choice locked early becomes payoff-relevant later, after ownership and orientation have changed — so the current tops are not a sufficient description of the state.
 
 Full rules: [`RULES.md`](RULES.md) (v1.13) · Playable intro: [two-minute game](https://psdg.pages.dev/game-in-two-minutes.html)
 
