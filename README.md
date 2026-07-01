@@ -141,7 +141,7 @@ python3 benchmark/enumerate_blunder_static_vs_optimal.py                # draw-i
 
 ## The game
 
-![PSDG board](https://psdg.pages.dev/images/homepage-board-1200.jpg)
+![PSDG board](images/homepage-board-1200.jpg)
 
 Learn basic play in about 3 minutes — [Watch on YouTube](https://youtu.be/N3j1XJp2ZsI). The
 tiebreak / Immortal rule takes a few more minutes —
