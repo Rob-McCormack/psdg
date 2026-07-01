@@ -1,0 +1,36 @@
+  250/5000 done
+  500/5000 done
+  750/5000 done
+  1000/5000 done
+  1250/5000 done
+  1500/5000 done
+  1750/5000 done
+  2000/5000 done
+  2250/5000 done
+  2500/5000 done
+  2750/5000 done
+  3000/5000 done
+  3250/5000 done
+  3500/5000 done
+  3750/5000 done
+  4000/5000 done
+  4250/5000 done
+  4500/5000 done
+  4750/5000 done
+  5000/5000 done
+
+==================================================================
+Solver entry-point consistency diagnostic (READ-ONLY)
+==================================================================
+  N seeds                         : 5000
+  stored value counts (+1/0/-1)   : 3663 / 938 / 399
+
+(2) ROOT-LABEL check  (solve_from_position@root  vs  stored value):
+    total root mismatches            : 0
+    among A-win roots (v=+1) -> != +1 : 0  (= 0.00% of 3663)
+    *** this is the real contamination of the '330 of 3663' label ***
+
+(3) WITNESS/LINE check (deep node before B's last pick vs stored value):
+    total node mismatches            : 39  (= 0.78% of seeds  <- compare to Claude's ~0.85%)
+    among A-win roots (v=+1) -> != +1 : 39
+    node-mismatch seeds (seed, stored, node_resolve): [(1278, 1, -1), (1592, 1, -1), (1719, 1, -1), (1735, 1, -1), (1804, 1, -1), (1806, 1, -1), (1833, 1, -1), (1850, 1, -1), (1872, 1, -1), (1887, 1, -1), (1936, 1, -1), (2020, 1, -1), (2046, 1, -1), (2076, 1, -1), (2420, 1, -1), (2552, 1, -1), (3489, 1, 0), (3887, 1, -1), (3920, 1, -1), (3935, 1, -1), (3998, 1, -1), (4129, 1, -1), (4167, 1, -1), (4193, 1, -1), (4202, 1, -1), (4277, 1, -1), (4301, 1, -1), (4339, 1, -1), (4359, 1, -1), (4372, 1, -1), (4402, 1, -1), (4437, 1, -1), (4464, 1, -1), (4470, 1, -1), (4472, 1, -1), (4505, 1, -1), (4506, 1, -1), (4527, 1, -1), (4712, 1, 0)]
