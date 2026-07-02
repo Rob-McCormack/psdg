@@ -22,6 +22,8 @@ Six dice are rolled onto a shared board; each player holds a Red Crystal value. 
 
 **Ready, fire, aim.** Most games feel like *ready, aim, fire*; PSDG is *ready, fire, aim* — you commit a die's facing in the draft (the Twist) *before* the Tumble and Exchange unpack what it scores, so commitment precedes evaluation. A choice locked early becomes payoff-relevant later, after ownership and orientation have changed — so the current tops are not a sufficient description of the state.
 
+**You also act inside your opponent's position.** At the Exchange, both players *must* hand a die to the opponent and set the facing it arrives with — and if your tops repeat, the rules force *which* die you give. Part of your opponent's position is built by you, sometimes by choice and sometimes by rule — a large part of why a frozen "solved" plan turns brittle once the opponent leaves the expected line. ([more →](https://psdg.pages.dev/research.html#adversary-control))
+
 Full rules: [`RULES.md`](RULES.md) (v1.13) · Playable intro: [two-minute game](https://psdg.pages.dev/game-in-two-minutes.html)
 
 ## What it measures
