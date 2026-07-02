@@ -64,6 +64,8 @@ Two findings worth knowing before you object:
 - **A trained aliased agent pays *more* than the floor** (mean excess regret ~0.13 vs structural floor ~0.05). The floor is a lower bound; optimizing around a lossy representation makes it worse.
 - **A stronger learner would not help — and MCTS would cheat.** Any memoryless function of the tops-only observation is bound by the floor: the facings are not in the input. And a planner with a true simulator (AlphaZero-style) would *de-alias itself through the search tree*, quietly smuggling back the removed information — making it a worse instrument for this question, not a better one. A history-conditioned agent *could* reconstruct the facings, which is the point: the deciding information has to enter somewhere. [Full argument →](https://psdg.pages.dev/learning-the-wrong-state.html#undertraining)
 
+**Full write-up →** [Learning the wrong state](https://psdg.pages.dev/learning-the-wrong-state.html) — the complete trained-agent result: 5-seed tables, the budget sweep, and the non-monotone solved-seed reporting.
+
 ## Result 2 — deployment: a frozen exact plan loses to a worse opponent
 
 Let opponent B blunder its last draft pick, and compare an A that **re-solves** the realised position against an A that replays a **static** principal-line plan. 5,000-game suite, six dice, seeds 42–5041:
