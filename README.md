@@ -6,6 +6,8 @@ PSDG is a two-player dice game. The board setup is random; after that there is n
 
 The simplest way to put it: PSDG creates positions that look identical if you track only the obvious current features (the dice tops), yet require opposite optimal moves. The missing information was never secret — a player created it with an earlier choice, which was then dropped from the agent's representation. Because the game has an exact solver, I can measure exactly when that blind spot turns a provable win into a loss.
 
+Put another way: your real opponent isn't the other player — it's the game's structure. You're not beaten by a mind, you're beaten by structure you didn't represent. ([more →](https://psdg.pages.dev/research.html#real-opponent))
+
 ## The game
 
 ![PSDG board](images/homepage-board-1200.jpg)
