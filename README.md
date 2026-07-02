@@ -143,11 +143,11 @@ The results live in `ml/` and `benchmark/`, not just this page. To hand a model 
 
 ## Going deeper
 
-Start with the at-a-glance pages for your field, then the worked exhibits:
+Full write-ups by field, then the worked exhibits:
 
-- **ML:** [at a glance](https://psdg.pages.dev/ml-at-a-glance.html) · [learning the wrong state (trained)](https://psdg.pages.dev/learning-the-wrong-state.html) · [full page](https://psdg.pages.dev/ml.html)
-- **AI safety:** [at a glance](https://psdg.pages.dev/aisafety-at-a-glance.html) · [full page](https://psdg.pages.dev/aisafety.html)
-- **Game theory:** [at a glance](https://psdg.pages.dev/gametheory-at-a-glance.html) · [pinned definitions](https://psdg.pages.dev/gametheory.html#pinned-definitions)
+- **ML:** [learning the wrong state (the representation result)](https://psdg.pages.dev/learning-the-wrong-state.html) · [full page](https://psdg.pages.dev/ml.html)
+- **AI safety:** [full page](https://psdg.pages.dev/aisafety.html) · [the oversight bind](https://psdg.pages.dev/aisafety.html#human-oversight-bind)
+- **Game theory:** [full page](https://psdg.pages.dev/gametheory.html) · [pinned definitions](https://psdg.pages.dev/gametheory.html#pinned-definitions)
 - **Worked exhibits:** [tops-only aliasing](https://psdg.pages.dev/aliasing-exchange-example.html) · [blunder wins](https://psdg.pages.dev/blunder-wins-example.html) · [FAQ](https://psdg.pages.dev/faq.html)
 
 ## Scope
