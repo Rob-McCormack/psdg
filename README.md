@@ -106,6 +106,7 @@ python3 ml/sweep_matrix.py 500000 0,1,2,3,4 400          # full vs tops-only × 
 python3 ml/robustness_budget.py 500000,1000000,2000000,4000000 0,1,2,3,4 400 tops_only
                                                          # "did we just undertrain?" — out to 8× (long)
 python3 ml/structural_floors_cross.py                    # draft floors on control openings (minutes)
+python3 ml/floor_distribution.py --n 200 --seed 2026     # draft-floor prevalence across random openings (~8 min)
 python3 ml/step3_cross_opening.py                        # full-vs-tops across the opening suite
 
 # --- Deployment result ---
